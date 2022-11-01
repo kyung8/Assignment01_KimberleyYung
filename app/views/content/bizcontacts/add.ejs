@@ -1,0 +1,47 @@
+<div class="container">
+     <div class="row">
+         <div class="offset-md-3 col-md-6">
+             <h1><%= title %></h1>
+ 
+             <form class="form" method="POST">
+                 <input type="hidden" name="id" value="<%= contacts._id %>" >
+                 <div class="form-group">
+                     <label for="contactName">Contact Name</label>
+                     <input type="text" class="form-control"
+                     id="contactName"
+                     placeholder="Enter the name of the contact"
+                     name="contactName" 
+                     required>
+                 </div>
+ 
+                 <div class="form-group">
+                     <label for="contactNumber">Contact Number</label>
+                     <input type="text" class="form-control"
+                     id="contactNumber"
+                     placeholder="Enter the contact's number"
+                     name="contactNumber" 
+                     required>
+                 </div>
+ 
+                 <div class="form-group">
+                     <label for="emailAddress">Email</label>
+                     <input type="text" class="form-control"
+                     id="emailAddress"
+                     placeholder="Enter the contacts email"
+                     name="emailAddress" 
+                     required>
+                 </div>
+              
+                <button class="btn btn-primary" type="submit">
+                     <i class="fas fa-edit"></i> Submit</button>
+                 
+                     <a href="/contacts-list" class="btn btn-warning">
+                         <i class="fas fa-undo"></i> Cancel</a>
+                     <a href="/contacts-delete/<%= bizcontacts._id %>" class="btn btn-danger">
+                         <i class="fas fa-trash-alt"></i> Delete</a>
+                     
+                 </form>
+         </div>
+ 
+     </div>
+ </div>

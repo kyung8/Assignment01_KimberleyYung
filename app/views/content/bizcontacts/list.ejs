@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Business Contacts List</h1>
+        <div class="col">
+
+            <a href="/bizcontacts/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add an employee</a>
+    
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col">Contact Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="contactsList">
+                    <!-- Repeatable Rows -->
+                    
+                    <% for(let count = 0; count < bizcontacts.length; count++){ %>
+                        <tr>
+                            <th scope="row" class="text-center"><%= count + 1 %></th>
+                            <td><%= bizcontacts[count].contactName %></td>
+                            <td><%= bizcontacts[count].contactNumber %></td>
+                            <td><%= bizcontacts[count].emailAddress %></td>
+                          
+                            <td class="text-center col-1">
+                                <a href="/bizcontacts-edit/<%= bizcontacts[count]._id %>"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i> Edit</a>
+                            </td>
+                            
+                            <td class="text-center col-1">
+                                <a href="/bizcontacts-delete/<%= bizcontacts[count]._id %>"
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
+
+
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
